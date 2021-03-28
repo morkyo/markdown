@@ -1,25 +1,29 @@
 <?php
 
 //エラーチェック
-if (!isset($_POST["task"]) || $_POST["task"] == "") {
+if (
+  !isset($_POST["title"]) || $_POST["title"] == "" ||
+  !isset($_POST["contents"]) || $_POST["contents"] == "" 
+) {
   exit("Error");
 }
 
 //入力値変数化
-$task = $_POST["task"];
-var_dump($task);
+$title = $_POST["title"];
+$contents = $_POST["contents"];
 
 //DB接続
 try {
-	$pdo = new  PDO('mysql:dbname=todo_db;charset=utf8;host=localhost','root','');
+	$pdo = new  PDO('mysql:dbname=md_db;charset=utf8;host=localhost','root','');
 } catch (PDOException $e) {
 	exit('データベースに接続できませんでした。'.$e->getMessage());
 }
 
 //データ登録SQL
-$sql = "INSERT INTO todo_table(id, task)VALUES(NULL, :task)";
+$sql = "INSERT INTO md_table(id, title, contents)VALUES(NULL, :title, :contents)";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':task', $task, PDO::PARAM_STR);
+$stmt->bindValue(':title', $title, PDO::PARAM_STR);
+$stmt->bindValue(':contents', $contents, PDO::PARAM_STR);
 $status = $stmt->execute();
 
 //データ登録処理後

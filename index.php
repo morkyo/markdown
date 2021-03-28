@@ -20,8 +20,9 @@
     <div class="insert_area">
     <form action="insert.php" method="post">
       <div class="insert-btn">
-        <button type="submit"><i class="fas fa-plus"></i></button>
-        <input type="text" name="task" placeholder="タスクの作成">
+        <input type="text" name="title" placeholder="title">
+        <textarea name="contents" id="contents" placeholder="contents"></textarea>
+        <button type="submit">hoge</button>
       </div>
     </form>
     </div>

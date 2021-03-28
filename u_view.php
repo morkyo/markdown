@@ -4,13 +4,13 @@ $id = $_GET["id"];
 
 //DB接続
 try {
-	$pdo = new  PDO('mysql:dbname=todo_db;charset=utf8;host=localhost','root','');
+	$pdo = new  PDO('mysql:dbname=md_db;charset=utf8;host=localhost','root','');
 } catch (PDOException $e) {
 	exit('データベースに接続できませんでした。'.$e->getMessage());
 }
 
 //データ登録SQL
-$sql = "SELECT * FROM todo_table WHERE id = :id";
+$sql = "SELECT * FROM md_table WHERE id = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
@@ -33,7 +33,7 @@ if ($status==false) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TODO</title>
+  <title>markdown</title>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="css/style.css?<?= filemtime( "{$_SERVER['DOCUMENT_ROOT']}/php_db_sql/css/style.css" ) ?>">
 </head>
@@ -47,7 +47,8 @@ if ($status==false) {
     <h2>Update ...</h2>
     <form action="update.php" method="post">
       <div class="update">
-        <input type="text" name="task" value="<?= $row["task"] ?>">
+        <input type="text" name="title" value="<?= $row["title"] ?>">
+        <textarea name="contents" value="<?= $row["contents"] ?>"></textarea>
         <input type="hidden" name="id" value="<?= $row["id"] ?>">
         <button type="submit">更新する</button>
       </div>
