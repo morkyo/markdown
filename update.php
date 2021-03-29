@@ -2,6 +2,7 @@
 //POSTで取得
 $id = $_POST["id"];
 $title = $_POST["title"];
+$contents = $_POST["contents"];
 
 //DB接続
 try {
@@ -11,9 +12,10 @@ try {
 }
 
 //データ登録SQL
-$sql = "UPDATE md_table SET title = :title WHERE id = :id";
+$sql = "UPDATE md_table SET title = :title, contents = :contents WHERE id = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+$stmt->bindValue(':contents', $contents, PDO::PARAM_STR);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
 

@@ -49,26 +49,8 @@ h2 {
   font-weight: 500;
   color: #33b295;
 }
-.insert-btn {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.insert-btn input {
-  display: block;
-  width: 100%;
-  padding: 20px 10px;
-  font-size: 1.5rem;
-}
-.insert-btn button {
-  display: block;
-  padding-left: 20px;
 
-  font-size: 2rem;
-  color: #777;
-  cursor: pointer;
-}
-.select_area p {
+/* .select_area p {
   position: relative;
 }
 .select_area .task_val {
@@ -108,9 +90,9 @@ h2 {
 }
 .select_area .delete:hover i {
   color: #fff;
-}
+} */
 sub {
-  height: 100vh;
+  /* height: 100vh; */
   width: 290px;
   border-right: 1px solid #eaeaea;
   background: #f4f4f4;
@@ -127,26 +109,4 @@ sub ul li i {
   margin-right: 10px;
   font-size: 1.8rem;
   color: #777;
-}
-.update {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.update input {
-  display: block;
-  width: 80%;
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
-  font-size: 1.5rem;
-}
-.update button {
-  display: block;
-  width: 160px;
-  padding: 10px 0;
-  border-radius: 3px;
-  background: #33b295;
-  font-size: 1.5rem;
-  color: #fff;
-  cursor: pointer;
 }
