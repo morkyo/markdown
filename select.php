@@ -1,10 +1,7 @@
 <?php
+
 //DB接続
-try {
-	$pdo = new  PDO('mysql:dbname=md_db;charset=utf8;host=localhost','root','');
-} catch (PDOException $e) {
-	exit('データベースに接続できませんでした。'.$e->getMessage());
-}
+$pdo = dbConnect();
 
 //データ登録SQL
 $sql = "SELECT * FROM md_table";
@@ -22,7 +19,7 @@ if ($status==false) {
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
     $view .= "<p>";
     $view .= '<a href="u_view.php?id='.$result["id"].'" class="title_val">';
-    $view .= $result["title"];
+    $view .= h($result["title"]);
     $view .= '</a>';
     $view .= '<a href="delete.php?id='.$result["id"].'" class="delete" title="完了済みにする">';
     $view .= '<i class="fas fa-trash-alt"></i>';
@@ -32,4 +29,4 @@ if ($status==false) {
 }
 ?>
 
-<?=$view?>
+<?= $view ?>

@@ -1,18 +1,18 @@
 <?php
-//XSS対応関数
+//XSS対策
 function h($val){
   return htmlspecialchars($val,ENT_QUOTES);
 }
 
 //DB接続
-// function dbConnect(){
-//   try {
-//     $pdo = new  PDO('mysql:dbname=md_db;charset=utf8;host=localhost','root','');
-//   } catch (PDOException $e) {
-//     exit('データベースに接続できませんでした。'.$e->getMessage());
-//   }
-//   return $pdo;
-// }
+function dbConnect(){
+  try {
+    $pdo = new  PDO('mysql:dbname=md_db;charset=utf8;host=localhost','root','');
+  } catch (PDOException $e) {
+    exit('データベースに接続できませんでした。'.$e->getMessage());
+  }
+  return $pdo;
+}
 
 //LOGIN認証
 function loginCheck(){

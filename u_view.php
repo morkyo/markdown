@@ -7,11 +7,7 @@ loginCheck();
 $id = $_GET["id"];
 
 //DB接続
-try {
-	$pdo = new  PDO('mysql:dbname=md_db;charset=utf8;host=localhost','root','');
-} catch (PDOException $e) {
-	exit('データベースに接続できませんでした。'.$e->getMessage());
-}
+$pdo = dbConnect();
 
 //データ登録SQL
 $sql = "SELECT * FROM md_table WHERE id = :id";

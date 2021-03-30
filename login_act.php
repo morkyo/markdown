@@ -1,15 +1,13 @@
 <?php
-//入力値変数化
 session_start();
+include("funcs.php");
+
+//入力値変数化
 $lid = $_POST["lid"];
 $lpw = $_POST["lpw"];
 
 //DB接続
-try {
-	$pdo = new  PDO('mysql:dbname=md_db;charset=utf8;host=localhost','root','');
-} catch (PDOException $e) {
-	exit('データベースに接続できませんでした。'.$e->getMessage());
-}
+$pdo = dbConnect();
 
 //データ登録SQL
 $sql = "SELECT * FROM user_table WHERE u_id = :lid AND u_pw = :lpw";
@@ -30,8 +28,8 @@ $val = $stmt->fetch();
 
 //該当レコードがあればSESSIONに値を代入
 if ($val["id"] != "") {
-  $_SESSION["chk_ssid"] = session_id();//sessionIDをサーバーへ
-  $_SESSION["u_name"] = $val["u_name"];//userNameをサーバーへ
+  $_SESSION["chk_ssid"] = session_id();
+  $_SESSION["u_name"] = $val["u_name"];
   header("Location: index.php");
 } else {
   header("Location: login.php?error_register=入力エラー");

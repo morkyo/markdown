@@ -12,7 +12,7 @@
       <form action="login_act.php" method="post">
         <div class="login_form">
             <input type="text" name="lid" placeholder="ID">
-            <input type="text"  name="lpw" placeholder="PASS">
+            <input type="password"  name="lpw" placeholder="PASS">
           <div class="editor_submit">
             <button type="submit">Sign in</button>
             <a href="register.php">New to Markdown? Create an account.</a>
