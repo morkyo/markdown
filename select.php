@@ -25,7 +25,7 @@ if ($status==false) {
     $view .= $result["title"];
     $view .= '</a>';
     $view .= '<a href="delete.php?id='.$result["id"].'" class="delete" title="完了済みにする">';
-    $view .= '<i class="fas fa-check"></i>';
+    $view .= '<i class="fas fa-trash-alt"></i>';
     $view .= '</a>';
     $view .= "</p>";
   }

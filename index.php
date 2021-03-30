@@ -17,24 +17,23 @@
     <?php include("side.php");?>
   </sub>
   <main>
-    <h2>New Create ...</h2>
+    <h2 class="page_title">New Create ...</h2>
     <div class="insert_area">
       <form action="insert.php" method="post">
         <div class="editor_title">
-          <input type="text" name="title" placeholder="title">
+          <input type="text" name="title" placeholder="DOCUMENT NAME">
         </div>
         <div class="editor_contents">
-          <textarea id="contents" name="contents"></textarea>
+          <textarea id="contents" name="contents" placeholder="MARKDOWN"></textarea>
         </div>
         <div class="editor_submit">
-          <button type="submit">送信</button>
+          <button type="submit">Save it</button>
         </div>
       </form>
     </div>
   </main>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script>
   var simplemde = new SimpleMDE({ 

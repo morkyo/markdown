@@ -46,7 +46,7 @@ if ($status==false) {
     <?php include("side.php");?>
   </sub>
   <main>
-    <h2>Update ...</h2>
+    <h2 class="page_title">Update ...</h2>
     <form action="update.php" method="post">
       <div class="update">
         <div class="editor_title">
