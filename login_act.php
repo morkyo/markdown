@@ -34,7 +34,7 @@ if ($val["id"] != "") {
   $_SESSION["u_name"] = $val["u_name"];//userNameをサーバーへ
   header("Location: index.php");
 } else {
-  header("Location: login.php");
+  header("Location: login.php?error_register=入力エラー");
 }
 
 exit();

@@ -1,4 +1,9 @@
 <?php
+//XSS対応関数
+function h($val){
+  return htmlspecialchars($val,ENT_QUOTES);
+}
+
 //DB接続
 // function dbConnect(){
 //   try {
@@ -12,11 +17,12 @@
 //LOGIN認証
 function loginCheck(){
   if (!isset($_SESSION["chk_ssid"]) || $_SESSION["chk_ssid"] != session_id()) {
-    echo "LOGIN ERROR";
+    header("Location: login.php");
     exit();
   }else {
     session_regenerate_id(true);
     $_SESSION["chk_ssid"] = session_id();
+    return $_SESSION["chk_ssid"];
   }
 }
 

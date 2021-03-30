@@ -5,25 +5,22 @@ loginCheck();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Markdown</title>
-  <link href="//use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-  <link rel="stylesheet" href="css/style.css?<?= filemtime( "{$_SERVER['DOCUMENT_ROOT']}/markdown/css/style.css" ) ?>">
-</head>
+<?php include("head.php");?>
 <body>
-<?php include("header.php");?>
+<header>
+  <h1><a href="index.php">Markdown</a></h1>
+  <?php
+  if ($_SESSION["chk_ssid"] != "") {
+    echo '<a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Sign out</a>';
+  }
+  ?>
+</header>
 <div class="container">
   <sub>
     <?php include("side.php");?>
   </sub>
   <main>
-    <a href="logout.php">logout</a>
-    <h2 class="page_title">New Create ...</h2>
+    <h2 class="page_title">New document ...</h2>
     <div class="insert_area">
       <form action="insert.php" method="post">
         <div class="editor_title">

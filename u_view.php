@@ -1,4 +1,8 @@
 <?php
+session_start();
+include("funcs.php");
+loginCheck();
+
 //GETでidを取得
 $id = $_GET["id"];
 
@@ -29,18 +33,16 @@ if ($status==false) {
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>markdown</title>
-  <link href="//use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-  <link rel="stylesheet" href="css/style.css?<?= filemtime( "{$_SERVER['DOCUMENT_ROOT']}/markdown/css/style.css" ) ?>">
-</head>
+<?php include("head.php");?>
 <body>
-<?php include("header.php");?>
+<header>
+  <h1><a href="index.php">Markdown</a></h1>
+  <?php
+  if ($_SESSION["chk_ssid"] != "") {
+    echo '<a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Sign out</a>';
+  }
+  ?>
+</header>
 <div class="container">
   <sub>
     <?php include("side.php");?>
@@ -57,7 +59,7 @@ if ($status==false) {
         </div>
         <div class="editor_submit">
           <input type="hidden" name="id" value="<?= $row["id"] ?>">
-          <button type="submit">更新する</button>
+          <button type="submit">Update</button>
         </div>
       </div>
     </form>

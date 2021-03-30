@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include("head.php");?>
@@ -7,15 +8,16 @@
 </header>
 <div class="container">
   <main>
-    <h2 class="page_title">Sign in ...</h2>
+    <h2 class="page_title">Create your account ...</h2>
     <div class="insert_area">
-      <form action="login_act.php" method="post">
+      <form action="register_act.php" method="post">
         <div class="login_form">
+            <input type="text" name="u_name" placeholder="USER NAME">
             <input type="text" name="lid" placeholder="ID">
             <input type="text"  name="lpw" placeholder="PASS">
           <div class="editor_submit">
-            <button type="submit">Sign in</button>
-            <a href="register.php">New to Markdown? Create an account.</a>
+            <button type="submit">Create account</button>
+            <a href="login.php">Sign in instead</a>
           </div>
         </div>
       </form>

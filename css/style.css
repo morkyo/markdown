@@ -21,8 +21,9 @@ body {
   font-size: 1.4rem;
 }
 header {
+  position: relative;
   height: 48px;
-  background: #33b295;
+  background: #0c7395;
   text-align: center;
 }
 h1 a {
@@ -33,12 +34,19 @@ h1 a {
   letter-spacing: 1px;
   text-decoration: none;
 }
+.logout {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: #fff;
+  text-decoration: none;
+}
 .container {
   display: flex;
   justify-content: space-between;
 }
 main {
-  width: calc(100% - 290px);
+  width: 100%;
   padding: 0 30px;
   box-sizing: border-box;
   background: #fff;
@@ -50,7 +58,7 @@ main {
   margin: 20px 10px;
   font-size: 2rem;
   font-weight: 500;
-  color: #33b295;
+  color: #0c7395;
 }
 .editor_title input {
   display: block;
@@ -128,19 +136,30 @@ main {
   font-size: 2rem;
   font-weight: bold;
 }
+.editor_submit {
+  text-align: center;
+}
 .editor_submit button {
   display: block;
   width: 320px;
-  margin: 30px auto;
+  margin: 30px auto 20px;
   padding: 15px 0;
   border-radius: 3px;
-  background: #33b295;
+  background: #0c7395;
   text-align: center;
   font-size: 1.8rem;
   color: #fff;
 }
+.editor_submit a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #0c7395;
+}
+.editor_submit a:hover {
+  text-decoration: underline;
+}
 sub {
-  width: 290px;
+  width: 300px;
   border-right: 1px solid #eaeaea;
   background: #f4f4f4;
 }
@@ -165,6 +184,17 @@ sub p .title_val {
 }
 sub p .delete {
   margin-right: 10px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #777;
+}
+.login_form {
+  margin-top: 60px;
+}
+.login_form input {
+  display: block;
+  width: 50%;
+  margin: 0 auto 20px;
+  padding: 15px 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
 }
