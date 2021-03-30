@@ -43,6 +43,9 @@ main {
   box-sizing: border-box;
   background: #fff;
 }
+.insert_area {
+  min-height: 600px;
+}
 .page_title {
   margin: 20px 10px;
   font-size: 2rem;
@@ -72,7 +75,7 @@ main {
   font-size: 1.6rem;
 }
 .CodeMirror-scroll {
-  min-height: 400px;
+  min-height: 320px;
   margin-bottom: -40px;
 }
 .editor-toolbar i.separator {
