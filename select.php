@@ -1,16 +1,17 @@
 <?php
+$u_id = $_SESSION["u_id"];
 
 //DB接続
 $pdo = dbConnect();
 
 //データ登録SQL
-$sql = "SELECT * FROM md_table";
+$sql = "SELECT * FROM md_table WHERE u_id = '".$u_id."'";
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
 
 //データ登録処理後
 $view="";
-if ($status==false) {
+if ($status == false) {
   //エラー処理
   $error = $stmt->errorInfo();
   exit("ErrorQuery:".$error[2]);

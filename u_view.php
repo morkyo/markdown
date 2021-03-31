@@ -62,12 +62,6 @@ if ($status==false) {
   </main>
 </div>
 <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-<script>
-  var simplemde = new SimpleMDE({ 
-    element: document.getElementById("contents"),
-    forceSync : true,
-    spellChecker : false
-  });
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>

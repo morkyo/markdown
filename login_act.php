@@ -30,6 +30,7 @@ $val = $stmt->fetch();
 if ($val["id"] != "") {
   $_SESSION["chk_ssid"] = session_id();
   $_SESSION["u_name"] = $val["u_name"];
+  $_SESSION["u_id"] = $val["u_id"];
   header("Location: index.php");
 } else {
   header("Location: login.php?error_register=入力エラー");
