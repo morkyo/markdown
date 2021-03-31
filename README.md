@@ -1,3 +1,3 @@
 # Markdown Editor
 ![ img1](img/cap.png)
-![ img1](img/chart.png)
+![ img2](img/chart.png)
