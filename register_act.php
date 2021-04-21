@@ -37,4 +37,3 @@ if (!isset($u_name) || $u_name == ""){
     exit;
   }
 }
-?>

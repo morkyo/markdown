@@ -25,5 +25,3 @@ function loginCheck(){
     return $_SESSION["chk_ssid"];
   }
 }
-
-?>

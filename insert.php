@@ -32,6 +32,4 @@ if (!isset($_POST["title"]) || $_POST["title"]==""){
     header("Location: index.php");
     exit;
   }
-} 
-
-?>
+}

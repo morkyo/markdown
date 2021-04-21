@@ -12,5 +12,4 @@ if (isset($_COOKIE[session_name()])) {
 //サーバーのSESSIONIDを破棄
 session_destroy();
 
-header("Location: login.php")
-?>
+header("Location: login.php");
